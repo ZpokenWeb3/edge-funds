@@ -2,7 +2,7 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import { Token } from "@/constants/data";
-import Image from "next/image";
+import { CustomResponsiveImage } from "@/components/custom-responsive-image";
 
 export const columns: ColumnDef<Token>[] = [
   {
@@ -10,20 +10,21 @@ export const columns: ColumnDef<Token>[] = [
     id: "name",
     cell: (props) => (
       <div className="flex items-center gap-2">
-        <div
-          className={
-            props.row.original.name === "USDC, USDT, DAI"
-              ? "h-[18px] w-8 md:h-5 md:w-10 relative"
-              : "w-[18px] h-[18px] md:h-5 md:w-5 relative"
-          }
-        >
-          <Image
-            src={props.row.original.icon_uri}
-            alt={props.row.original.name}
-            fill
-            className="rounded-full"
-          />
-        </div>
+        <CustomResponsiveImage
+          className={props.row.original.name === "SEI" ? "rounded-full" : ""}
+          src={props.row.original.icon_uri}
+          alt={props.row.original.name}
+          size={{
+            modile: {
+              width: props.row.original.name === "USDC, USDT, DAI" ? 32 : 18,
+              height: 18,
+            },
+            desktop: {
+              width: props.row.original.name === "USDC, USDT, DAI" ? 40 : 20,
+              height: 20,
+            },
+          }}
+        />
         <p className="text-sm tracking-[-0.25px] font-normal md:text-base">
           {props.row.original.name}
         </p>

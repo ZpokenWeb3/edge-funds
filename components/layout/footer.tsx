@@ -1,3 +1,4 @@
+import { CustomResponsiveImage } from "../custom-responsive-image";
 import { Icons } from "../icons";
 
 export const Footer = () => {
@@ -86,9 +87,20 @@ export const Footer = () => {
       <div className="py-6 px-0 md:py-12 md:px-[56px] w-full grid lg:grid-cols-3 gap-8 lg:gap-20">
         <div className="flex flex-col justify-between">
           <div className="flex lg:flex-col justify-between gap-6">
-            <div>
-              <Icons.logo className="w-[120px] h-8" />
-            </div>
+            <CustomResponsiveImage
+              src="/logo.svg"
+              alt="Logo"
+              size={{
+                modile: {
+                  width: 120,
+                  height: 32,
+                },
+                desktop: {
+                  width: 120,
+                  height: 32,
+                },
+              }}
+            />
             <div className="flex items-center gap-4">
               <a className="cursor-pointer hover:opacity-50">
                 <Icons.twitter />

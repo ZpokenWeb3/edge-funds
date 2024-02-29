@@ -10,6 +10,7 @@ import { sliderTokens } from "@/constants/data";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
+import { CustomResponsiveImage } from "@/components/custom-responsive-image";
 
 export const Hero = () => {
   const screen = useScreenSize();
@@ -50,19 +51,24 @@ export const Hero = () => {
             {sliderTokens.map((t) => (
               <SwiperSlide
                 key={t.name}
-                className="flex flex-col p-6 bg-[rgba(0,0,0,0.50)] md:gap-8 items-center rounded-3xl border-[rgba(250,250,250,0.02)] border-[1px] w-[270px] backdrop-blur-[24px]"
+                className="flex flex-col items-center p-6 bg-[rgba(0,0,0,0.50)] md:gap-8 rounded-3xl border-[rgba(250,250,250,0.02)] border-[1px] w-[270px] backdrop-blur-[24px]"
               >
-                <div
-                  className={cn(
-                    "relative left-[50%] translate-x-[-50%]",
-                    t.name === "USD"
-                      ? "h-[56px] w-[112px] md:h-[80px] md:w-[160px]"
-                      : "h-[56px] w-[56px] md:h-[80px] md:w-[80px]",
-                  )}
-                >
-                  <Image src={t.icon_uri} alt={t.name} fill />
+                <div className="flex justify-center">
+                  <CustomResponsiveImage
+                    src={t.icon_uri}
+                    alt={t.name}
+                    size={{
+                      modile: {
+                        width: t.name === "USD" ? 100 : 56,
+                        height: 56,
+                      },
+                      desktop: {
+                        width: t.name === "USD" ? 140 : 80,
+                        height: 80,
+                      },
+                    }}
+                  />
                 </div>
-
                 <div className="flex flex-col items-center py-8">
                   <h1 className="text-[28px] leading-[36px] font-semibold md:text-[40px] md:leading-[48px]">
                     {t.month_APR}%

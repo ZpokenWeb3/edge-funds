@@ -1,6 +1,5 @@
-import { Icons } from "@/components/icons";
+import { CustomResponsiveImage } from "@/components/custom-responsive-image";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 
 export const Strategy = () => {
   return (
@@ -30,7 +29,7 @@ export const Strategy = () => {
             </div>
             <div className="p-6 flex flex-col gap-2 bg-muted rounded-lg border-[1px] border-[rgba(250,250,250,0.02)] backdrop-blur-xl">
               <h3 className="text-xl lg:text-2xl font-bold tracking-[-0.25px]">
-              Uncorrelated Returns Average 3 year APR {'>'} Average 3-year APR
+                Uncorrelated Returns Average 3 year APR {">"} Average 3-year APR
               </h3>
               <h4 className="text-sm lg:text-base font-normal tracking-[-0.25px] text-muted-foreground">
                 Alternative source of yield
@@ -46,16 +45,38 @@ export const Strategy = () => {
             </div>
           </div>
           <div className="p-6 flex flex-col justify-between gap-8 lg:gap-0 bg-muted rounded-lg border-[1px] border-[rgba(250,250,250,0.02)] backdrop-blur-xl">
-            <div>
-              <Icons.logo className="w-[90px] h-6" />
-            </div>
+            <CustomResponsiveImage
+              src="/logo.svg"
+              alt="Logo"
+              size={{
+                modile: {
+                  width: 90,
+                  height: 24,
+                },
+                desktop: {
+                  width: 90,
+                  height: 24,
+                },
+              }}
+            />
             <h2 className="text-2xl lg:text-[32px] lg:leading-10 font-bold">
               Maximize your token potential by earning token-on-token yield
             </h2>
             <div className="flex justify-between">
-              <div className="relative h-8 w-[120px]">
-                <Image src="/strategy_icon.webp" alt="strategy" fill />
-              </div>
+              <CustomResponsiveImage
+                src="/strategy_icon.webp"
+                alt="strategy"
+                size={{
+                  modile: {
+                    width: 120,
+                    height: 32,
+                  },
+                  desktop: {
+                    width: 120,
+                    height: 32,
+                  },
+                }}
+              />
               <Button>Deposit</Button>
             </div>
           </div>

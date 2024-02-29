@@ -6,6 +6,7 @@ import { Button, buttonVariants } from "../ui/button";
 import { Sheet, SheetContent } from "../ui/sheet";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { CustomResponsiveImage } from "../custom-responsive-image";
 
 const links = ["Strategy", "Perfomance", "About"];
 
@@ -49,9 +50,20 @@ export default function Header() {
               "fixed left-5 right-5 md:left-[20%] md:right-[20%] bg-muted bottom-10 flex items-center justify-between p-4 rounded-lg z-[100] opacity-0 h-[56px]",
             )}
           >
-            <div>
-              <Icons.logo className="w-[90px] h-6 md:w-[144px] md:h-[38px]" />
-            </div>
+            <CustomResponsiveImage
+              src="/logo.svg"
+              alt="Logo"
+              size={{
+                modile: {
+                  width: 90,
+                  height: 24,
+                },
+                desktop: {
+                  width: 144,
+                  height: 38,
+                },
+              }}
+            />
             <div
               className="block lg:hidden cursor-pointer hover:opacity-50"
               onClick={(e) => {
@@ -87,10 +99,21 @@ export default function Header() {
           <Button>More Details</Button>
         </SheetContent>
       </Sheet>
-      <div className="fixed left-5 right-5 md:left-[16%] md:right-[16%] bg-muted bottom-10 flex items-center justify-between p-4 rounded-lg z-[100]">
-        <div>
-          <Icons.logo className="w-[90px] h-6 md:w-[144px] md:h-[38px]" />
-        </div>
+      <div className="fixed left-5 right-5 md:left-[16%] md:right-[16%] bg-muted bottom-10 flex items-center justify-between px-4 py-[6px] rounded-lg z-[100]">
+        <CustomResponsiveImage
+          src="/logo.svg"
+          alt="Logo"
+          size={{
+            modile: {
+              width: 90,
+              height: 24,
+            },
+            desktop: {
+              width: 144,
+              height: 38,
+            },
+          }}
+        />
         <nav className="hidden lg:flex gap-4">
           {links.map((l) => (
             <Link

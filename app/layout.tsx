@@ -8,8 +8,11 @@ import { Footer } from "@/components/layout/footer";
 const inter = Oxanium({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Edge Funds",
-  description: "Edge Funds",
+  title: "UltraYield",
+  description: "UltraYield",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default async function RootLayout({
@@ -18,7 +21,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className='scroll-smooth'>
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body className={`${inter.className} px-2 md:px-4`}>
         <Toaster />
         <div>{children}</div>
