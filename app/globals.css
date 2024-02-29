@@ -97,3 +97,8 @@
   width: 100%;
   height: 100%;
 }
+
+.swiper-3d .swiper-slide{
+  height: 300px;
+  width: 270px;
+}

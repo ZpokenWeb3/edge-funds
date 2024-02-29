@@ -2,8 +2,6 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
 import { EffectCoverflow } from "swiper/modules";
 import useScreenSize from "@/hooks/screen-size";
 import { sliderTokens } from "@/constants/data";
@@ -40,18 +38,19 @@ export const Hero = () => {
             centeredSlides={true}
             loop={true}
             coverflowEffect={{
-              rotate: 0,
-              stretch: 0,
-              depth: 100,
-              modifier: 2.5,
+              rotate: 0, // Slide rotate in degrees
+              stretch: -38, // Stretch space between slides (in px)
+              depth: 70, // Depth offset in px (slides translate in Z axis)
+              modifier: 1, // Effect multipler
+              slideShadows: false, // Enables slides shadows
             }}
-            slidesPerView={screen.width < 768 ? 1.5 : 4}
+            slidesPerView={screen.width < 768 ? 1.5 : 5}
             modules={[EffectCoverflow]}
           >
-            {sliderTokens.map((t) => (
+            {sliderTokens.map((t, index) => (
               <SwiperSlide
-                key={t.name}
-                className="flex flex-col items-center p-6 bg-[rgba(0,0,0,0.50)] md:gap-8 rounded-3xl border-[rgba(250,250,250,0.02)] border-[1px] w-[270px] backdrop-blur-[24px]"
+                key={t.name + index}
+                className="flex flex-col items-center justify-between p-6 bg-[rgba(0,0,0,0.50)] md:gap-8 rounded-3xl border-[rgba(250,250,250,0.02)] border-[1px] backdrop-blur-[24px] "
               >
                 <div className="flex justify-center">
                   <CustomResponsiveImage
