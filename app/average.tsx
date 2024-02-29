@@ -4,10 +4,10 @@ import { tokens } from "@/constants/data";
 export const Average = () => {
   return (
     <div
-      className="relative md:h-screen rounded-[16px] md:rounded-[32px] flex justify-center"
+      className="relative md:h-screen rounded-[16px] md:rounded-[32px] flex justify-center scroll-section"
       id="perfomance"
     >
-      <div className="average_bg inset-0 absolute z-0 rounded-[16px] md:rounded-[32px]" />
+      <div className="bg-[url(/average_mobile_bg.webp)] md:bg-[url(/average.webp)] bg-cover bg-no-repeat inset-0 absolute z-0 rounded-[16px] md:rounded-[32px]" />
       <div className="flex flex-col py-10 px-2 items-center z-10 relative md:w-[68%] md:px-0">
         <div className="flex items-start">
           <h1 className="text-[28px] leading-[36px] md:text-[40px] md:leading-[48px] font-semibold mb-2 text-center">

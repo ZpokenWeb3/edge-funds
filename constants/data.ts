@@ -137,9 +137,9 @@ export const tokens: Token[] = [
 
 export const sliderTokens: Pick<Token, "name" | "month_APR" | "icon_uri">[] = [
   {
-    name: "USDC",
+    name: "USD",
     month_APR: 23.4,
-    icon_uri: "/USDC.webp",
+    icon_uri: "/USD.webp",
   },
   {
     name: "BTC",

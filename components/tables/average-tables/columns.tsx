@@ -38,10 +38,10 @@ export const columns: ColumnDef<Token>[] = [
   {
     id: "month_APR",
     accessorFn: (row) => (row.month_APR ? `${row.month_APR}%` : "-"),
-    header: "3 month APR, ann",
+    header: "Past 3-month APR (annualized)",
   },
   {
     accessorKey: "tvl",
-    header: "Current TVL",
+    header: "Current TVL ($)",
   },
 ];

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Icons } from "../icons";
 import { Button, buttonVariants } from "../ui/button";
 import { Sheet, SheetContent } from "../ui/sheet";
@@ -9,8 +9,33 @@ import Link from "next/link";
 
 const links = ["Strategy", "Perfomance", "About"];
 
+export const OFFSET = 300;
+
 export default function Header() {
   const [open, setOpen] = useState<boolean>(false);
+  const [hash, setHash] = useState("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const newActiveLinks = [...document.querySelectorAll(".scroll-section")]
+        .filter((section) => {
+          const rect = section.getBoundingClientRect();
+
+          return rect.top <= OFFSET && rect.bottom > OFFSET;
+        })
+        .map((section) => section.id);
+
+      if (newActiveLinks.length) {
+        setHash(newActiveLinks[0]);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -52,6 +77,7 @@ export default function Header() {
                     variant: "ghost",
                   }),
                   "text-base font-medium p-4",
+                  hash === `${l.toLowerCase()}` && "bg-[#18181A] rounded-sm",
                 )}
               >
                 {l}
@@ -76,6 +102,7 @@ export default function Header() {
                   variant: "ghost",
                 }),
                 "text-base font-medium",
+                hash === `${l.toLowerCase()}` && "text-[#00A3FF]",
               )}
             >
               {l}

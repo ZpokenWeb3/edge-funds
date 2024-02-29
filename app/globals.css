@@ -97,14 +97,3 @@
   width: 100%;
   height: 100%;
 }
-
-.hero_bg {
-  background:
-    url("/hero.webp"),
-    lightgray 50% / cover no-repeat;
-}
-.average_bg {
-  background:
-    url("/average.webp"),
-    lightgray 50% / cover no-repeat;
-}

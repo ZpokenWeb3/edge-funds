@@ -5,33 +5,31 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { EffectCoverflow } from "swiper/modules";
+import useScreenSize from "@/hooks/screen-size";
+import { sliderTokens } from "@/constants/data";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import useScreenSize from "@/hooks/screen-size";
-import { sliderTokens } from "@/constants/data";
 
 export const Hero = () => {
   const screen = useScreenSize();
 
   return (
     <div
-      className="relative h-[680px] md:h-screen rounded-[16px] md:rounded-[32px]"
+      className="relative h-[680px] md:h-screen rounded-[16px] md:rounded-[32px] scroll-section"
       id="hero"
     >
-      <div className="hero_bg inset-0 absolute z-0 rounded-[16px] md:rounded-[32px]" />
       <div className="flex flex-col items-center z-10 relative pt-10 md:pt-[56px]">
         <div className="flex items-start">
           <h1 className="text-[28px] leading-[36px] md:text-[40px] md:leading-[48px] font-semibold mb-2 text-center">
-            Earn yield on any token{" "}
+            Earn Ultra Yield on Any Token
             <span className="text-[12px] leading-5 md:text-base font-semibold pl-1 align-top">
               †
             </span>
           </h1>
         </div>
-        <p className="text-sm font-normal md:text-base tracking-[-0.25px] text-center text-muted-foreground mb-[118px] md:mb-[66px]">
+        <p className="text-sm font-normal md:text-base tracking-[-0.25px] text-center text-muted-foreground mb-[118px] md:mb-[66px] lg:w-[30%]">
           Generate additional yield on your tokens without selling them through
-          <br />
           uncorrelated market-neutral strategies
         </p>
         {screen.height && screen.width ? (
@@ -57,7 +55,7 @@ export const Hero = () => {
                 <div
                   className={cn(
                     "relative left-[50%] translate-x-[-50%]",
-                    t.name === "USDC"
+                    t.name === "USD"
                       ? "h-[56px] w-[112px] md:h-[80px] md:w-[160px]"
                       : "h-[56px] w-[56px] md:h-[80px] md:w-[80px]",
                   )}
@@ -79,6 +77,9 @@ export const Hero = () => {
           <></>
         )}
       </div>
+      <div className="bg-[url(/hero_mobile_bg.webp)] md:bg-[url(/hero.webp)] bg-cover bg-no-repeat inset-0 absolute z-0 rounded-[16px] md:rounded-[32px]" />
+      <div className="hidden md:block bg-gradient-to-r from-[rgba(0,0,0,0.84)] to-[rgba(0,0,0,0.00)] top-0 left-0 h-screen absolute z-0 inset-0 w-[47%]" />
+      <div className="hidden md:block bg-gradient-to-l from-[rgba(0,0,0,0.84)] to-[rgba(0,0,0,0.00)] top-0 right-0 h-screen absolute z-0  w-[47%]" />
     </div>
   );
 };

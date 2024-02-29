@@ -101,7 +101,7 @@ export function DataTable<TData, TValue>({
             )}
           </TableBody>
           <TableFooter className="bg-transparent">
-            <TableRow className="hover:bg-transparent">
+            <TableRow className="hover:bg-transparent border-b-[0px]">
               <TableCell colSpan={4} className="py-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">

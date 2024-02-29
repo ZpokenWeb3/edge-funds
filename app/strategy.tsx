@@ -5,7 +5,7 @@ import Image from "next/image";
 export const Strategy = () => {
   return (
     <div
-      className="lg:h-screen rounded-[16px] md:rounded-[32px] bg-[#101012] flex justify-center px-2 pt-2 md:py-10 md:px-0 pb-2 md:pb-0"
+      className="lg:h-screen rounded-[16px] md:rounded-[32px] bg-[#101012] flex justify-center px-2 pt-2 md:py-10 md:px-0 pb-2 md:pb-0 scroll-section"
       id="strategy"
     >
       <div className="flex flex-col items-center md:w-[68%]">
@@ -21,7 +21,7 @@ export const Strategy = () => {
           <div className="flex flex-col gap-3">
             <div className="p-6 flex flex-col gap-2 bg-muted rounded-lg border-[1px] border-[rgba(250,250,250,0.02)] backdrop-blur-xl">
               <h3 className="text-xl lg:text-2xl font-bold tracking-[-0.25px]">
-                3-year performance track record
+                3-year audited track record
               </h3>
               <h4 className="text-sm lg:text-base font-normal tracking-[-0.25px] text-muted-foreground">
                 Audited track record targeting{" "}
@@ -30,7 +30,7 @@ export const Strategy = () => {
             </div>
             <div className="p-6 flex flex-col gap-2 bg-muted rounded-lg border-[1px] border-[rgba(250,250,250,0.02)] backdrop-blur-xl">
               <h3 className="text-xl lg:text-2xl font-bold tracking-[-0.25px]">
-                Uncorrelated to BTC and Traditional assets
+              Uncorrelated Returns Average 3 year APR {'>'} Average 3-year APR
               </h3>
               <h4 className="text-sm lg:text-base font-normal tracking-[-0.25px] text-muted-foreground">
                 Alternative source of yield
