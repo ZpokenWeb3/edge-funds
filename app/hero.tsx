@@ -35,8 +35,8 @@ export const Hero = () => {
           <Swiper
             effect="coverflow"
             grabCursor={true}
-            // centeredSlides={true}
-            // loop={true}
+            centeredSlides={screen.width < 768}
+            loop={screen.width < 768}
             speed={2000}
             autoplay={{
               delay: 0,
