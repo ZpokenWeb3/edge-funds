@@ -98,7 +98,17 @@
   height: 100%;
 }
 
-.swiper-3d .swiper-slide{
+.swiper-3d .swiper-slide {
   height: 300px;
   width: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+  .swiper-3d .swiper-slide {
+    height: 243px;
+    width: 208px;
+  }
 }

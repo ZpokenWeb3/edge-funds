@@ -22,9 +22,9 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body className={`${inter.className} px-2 md:px-4`}>
+      <body className={`${inter.className}`}>
         <Toaster />
-        <div>{children}</div>
+        <div className='px-2 md:px-4'>{children}</div>
         <Header />
         <Footer />
       </body>

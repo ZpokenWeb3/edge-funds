@@ -41,8 +41,8 @@ export const columns: ColumnDef<Token>[] = [
     accessorFn: (row) => (row.month_APR ? `${row.month_APR}%` : "-"),
     header: "Past 3-month APR (annualized)",
   },
-  {
-    accessorKey: "tvl",
-    header: "Current TVL ($)",
-  },
+  // {
+  //   accessorKey: "tvl",
+  //   header: "Current TVL ($)",
+  // },
 ];

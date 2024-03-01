@@ -35,11 +35,15 @@ export const Hero = () => {
           <Swiper
             effect="coverflow"
             grabCursor={true}
-            centeredSlides={true}
-            loop={true}
+            // centeredSlides={true}
+            // loop={true}
+            speed={2000}
+            autoplay={{
+              delay: 0,
+            }}
             coverflowEffect={{
               rotate: 0, // Slide rotate in degrees
-              stretch: -38, // Stretch space between slides (in px)
+              stretch: screen.width < 768 ? -8 : -38, // Stretch space between slides (in px)
               depth: 70, // Depth offset in px (slides translate in Z axis)
               modifier: 1, // Effect multipler
               slideShadows: false, // Enables slides shadows
@@ -50,7 +54,7 @@ export const Hero = () => {
             {sliderTokens.map((t, index) => (
               <SwiperSlide
                 key={t.name + index}
-                className="flex flex-col items-center justify-between p-6 bg-[rgba(0,0,0,0.50)] md:gap-8 rounded-3xl border-[rgba(250,250,250,0.02)] border-[1px] backdrop-blur-[24px] "
+                className="p-6 bg-[rgba(0,0,0,0.50)] rounded-3xl border-[rgba(250,250,250,0.02)] border-[1px] backdrop-blur-[24px] "
               >
                 <div className="flex justify-center">
                   <CustomResponsiveImage
@@ -68,7 +72,7 @@ export const Hero = () => {
                     }}
                   />
                 </div>
-                <div className="flex flex-col items-center py-8">
+                <div className="flex flex-col items-center">
                   <h1 className="text-[28px] leading-[36px] font-semibold md:text-[40px] md:leading-[48px]">
                     {t.month_APR}%
                   </h1>

@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { Icons } from "../icons";
-import { Button, buttonVariants } from "../ui/button";
+import { buttonVariants } from "../ui/button";
 import { Sheet, SheetContent } from "../ui/sheet";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { CustomResponsiveImage } from "../custom-responsive-image";
+import { JoinModal } from "../modal/join-modal";
+import { DisclaimerModal } from "../modal/disclaimer-modal";
 
 const links = ["Strategy", "Perfomance", "About"];
 
@@ -96,56 +98,62 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-          <Button>More Details</Button>
+          <JoinModal />
         </SheetContent>
       </Sheet>
-      <div className="fixed left-5 right-5 md:left-[16%] md:right-[16%] bg-muted bottom-10 flex items-center justify-between px-4 py-[6px] rounded-lg z-[100]">
-        <CustomResponsiveImage
-          src="/logo.svg"
-          alt="Logo"
-          size={{
-            modile: {
-              width: 90,
-              height: 24,
-            },
-            desktop: {
-              width: 144,
-              height: 38,
-            },
-          }}
-        />
-        <nav className="hidden lg:flex gap-4">
-          {links.map((l) => (
-            <Link
-              key={l}
-              href={`#${l.toLowerCase()}`}
-              className={cn(
-                buttonVariants({
-                  size: "ghost",
-                  variant: "ghost",
-                }),
-                "text-base font-medium",
-                hash === `${l.toLowerCase()}` && "text-[#00A3FF]",
-              )}
-            >
-              {l}
-            </Link>
-          ))}
-        </nav>
-        <Button className="hidden lg:block">More Details</Button>
-        <div
-          className="block lg:hidden cursor-pointer hover:opacity-50"
-          onClick={() => {
-            setOpen((state) => !state);
-          }}
-        >
-          {open ? (
-            <Icons.X className="w-6 h-6 text-foreground" />
-          ) : (
-            <Icons.burger />
-          )}
+      {hash === "about" ? (
+        <></>
+      ) : (
+        <div className="fixed left-5 right-5 md:left-[16%] md:right-[16%] bg-muted bottom-10 flex items-center justify-between px-4 py-[6px] rounded-lg z-[100]">
+          <CustomResponsiveImage
+            src="/logo.svg"
+            alt="Logo"
+            size={{
+              modile: {
+                width: 90,
+                height: 24,
+              },
+              desktop: {
+                width: 144,
+                height: 38,
+              },
+            }}
+          />
+          <nav className="hidden lg:flex gap-4">
+            {links.map((l) => (
+              <Link
+                key={l}
+                href={`#${l.toLowerCase()}`}
+                className={cn(
+                  buttonVariants({
+                    size: "ghost",
+                    variant: "ghost",
+                  }),
+                  "text-base font-medium",
+                  hash === `${l.toLowerCase()}` && "text-[#00A3FF]",
+                )}
+              >
+                {l}
+              </Link>
+            ))}
+          </nav>
+          <JoinModal buttonClassName="hidden lg:block" />
+
+          <div
+            className="block lg:hidden cursor-pointer hover:opacity-50"
+            onClick={() => {
+              setOpen((state) => !state);
+            }}
+          >
+            {open ? (
+              <Icons.X className="w-6 h-6 text-foreground" />
+            ) : (
+              <Icons.burger />
+            )}
+          </div>
         </div>
-      </div>
+      )}
+      <DisclaimerModal />
     </>
   );
 }
