@@ -36,7 +36,7 @@ export const Hero = () => {
             effect="coverflow"
             grabCursor={true}
             centeredSlides={true}
-            initialSlide={2}
+            initialSlide={3}
             loop={screen.width < 768}
             speed={2000}
             autoplay={{
@@ -49,10 +49,18 @@ export const Hero = () => {
               modifier: 1, // Effect multipler
               slideShadows: false, // Enables slides shadows
             }}
-            slidesPerView={screen.width < 768 ? 1.5 : 5}
+            slidesPerView={screen.width < 768 ? 1.5 : 6}
             modules={[EffectCoverflow]}
           >
-            {sliderTokens.map((t, index) => (
+            {[
+              ...sliderTokens,
+              ...sliderTokens,
+              ...sliderTokens,
+              ...sliderTokens,
+              ...sliderTokens,
+              ...sliderTokens,
+              ...sliderTokens,
+            ].map((t, index) => (
               <SwiperSlide
                 key={t.name + index}
                 className="p-6 bg-[rgba(0,0,0,0.50)] rounded-3xl border-[rgba(250,250,250,0.02)] border-[1px] backdrop-blur-[24px] "
