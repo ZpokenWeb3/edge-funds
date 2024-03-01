@@ -33,7 +33,6 @@ export const Hero = () => {
         </p>
         {screen.height && screen.width ? (
           <Swiper
-            onScroll={(sw) => console.log(sw)}
             effect="coverflow"
             grabCursor={true}
             centeredSlides={true}
@@ -53,38 +52,36 @@ export const Hero = () => {
             slidesPerView={screen.width < 768 ? 1.5 : 5}
             modules={[EffectCoverflow]}
           >
-            {sliderTokens.map(
-              (t, index) => (
-                <SwiperSlide
-                  key={t.name + index}
-                  className="p-6 bg-[rgba(0,0,0,0.50)] rounded-3xl border-[rgba(250,250,250,0.02)] border-[1px] backdrop-blur-[24px] "
-                >
-                  <div className="flex justify-center">
-                    <CustomResponsiveImage
-                      src={t.icon_uri}
-                      alt={t.name}
-                      size={{
-                        modile: {
-                          width: t.name === "USD" ? 100 : 56,
-                          height: 56,
-                        },
-                        desktop: {
-                          width: t.name === "USD" ? 140 : 80,
-                          height: 80,
-                        },
-                      }}
-                    />
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <h1 className="text-[28px] leading-[36px] font-semibold md:text-[40px] md:leading-[48px]">
-                      {t.month_APR}%
-                    </h1>
-                    <p>{t.name}</p>
-                  </div>
-                  <Button className="w-full">Deposit</Button>
-                </SwiperSlide>
-              ),
-            )}
+            {sliderTokens.map((t, index) => (
+              <SwiperSlide
+                key={t.name + index}
+                className="p-6 bg-[rgba(0,0,0,0.50)] rounded-3xl border-[rgba(250,250,250,0.02)] border-[1px] backdrop-blur-[24px] "
+              >
+                <div className="flex justify-center">
+                  <CustomResponsiveImage
+                    src={t.icon_uri}
+                    alt={t.name}
+                    size={{
+                      modile: {
+                        width: t.name === "USD" ? 100 : 56,
+                        height: 56,
+                      },
+                      desktop: {
+                        width: t.name === "USD" ? 140 : 80,
+                        height: 80,
+                      },
+                    }}
+                  />
+                </div>
+                <div className="flex flex-col items-center">
+                  <h1 className="text-[28px] leading-[36px] font-semibold md:text-[40px] md:leading-[48px]">
+                    {t.month_APR}%
+                  </h1>
+                  <p>{t.name}</p>
+                </div>
+                <Button className="w-full">Deposit</Button>
+              </SwiperSlide>
+            ))}
           </Swiper>
         ) : (
           <></>
