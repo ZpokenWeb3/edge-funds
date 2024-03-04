@@ -3,15 +3,15 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Button } from "@/components/ui/button";
 import { EffectCoverflow } from "swiper/modules";
-import useScreenSize from "@/hooks/screen-size";
 import { sliderTokens } from "@/constants/data";
 import { CustomResponsiveImage } from "@/components/custom-responsive-image";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
+import useScreenSize from "@/hooks/screen-size";
 
 export const Hero = () => {
-  const screen = useScreenSize();
+  const scr = useScreenSize();
 
   return (
     <div
@@ -31,25 +31,41 @@ export const Hero = () => {
           Generate additional yield on your tokens without selling them through
           uncorrelated market-neutral strategies
         </p>
-        {screen.height && screen.width ? (
+
+        {scr.height && scr.width ? (
           <Swiper
+            slidesPerView={5.8}
+            breakpoints={{
+              // when window width is >= 320px
+              320: {
+                slidesPerView: 1.5,
+                coverflowEffect: {
+                  stretch: -8, // Stretch space between slides (in px)
+                },
+              },
+              // when window width is >= 1024px
+              1024: {
+                slidesPerView: 5,
+                coverflowEffect: {
+                  stretch: -38, // Stretch space between slides (in px)
+                },
+              },
+            }}
             effect="coverflow"
             grabCursor={true}
             centeredSlides={true}
-            initialSlide={3}
-            loop={screen.width < 768}
+            initialSlide={30}
+            loop
             speed={2000}
             autoplay={{
               delay: 0,
             }}
             coverflowEffect={{
               rotate: 0, // Slide rotate in degrees
-              stretch: screen.width < 768 ? -8 : -38, // Stretch space between slides (in px)
               depth: 70, // Depth offset in px (slides translate in Z axis)
               modifier: 1, // Effect multipler
               slideShadows: false, // Enables slides shadows
             }}
-            slidesPerView={screen.width < 768 ? 1.5 : 6}
             modules={[EffectCoverflow]}
           >
             {[
@@ -91,9 +107,7 @@ export const Hero = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        ) : (
-          <></>
-        )}
+        ) : <></>}
       </div>
       <div className="bg-[url(/hero_mobile_bg.webp)] md:bg-[url(/hero.webp)] bg-cover bg-no-repeat inset-0 absolute z-0 rounded-[16px] md:rounded-[32px]" />
       <div className="hidden md:block bg-gradient-to-r from-[rgba(0,0,0,0.84)] to-[rgba(0,0,0,0.00)] top-0 left-0 h-screen absolute z-0 inset-0 w-[47%]" />
