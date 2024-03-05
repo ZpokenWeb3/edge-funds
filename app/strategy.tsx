@@ -1,11 +1,11 @@
 import { CustomResponsiveImage } from "@/components/custom-responsive-image";
 import { Button } from "@/components/ui/button";
 
-export const Strategy = () => {
+export const Strategy = ({ id }: { id?: string }) => {
   return (
     <div
-      className="lg:h-screen rounded-[16px] md:rounded-[32px] bg-[#101012] flex justify-center px-2 pt-2 md:py-10 md:px-0 pb-2 md:pb-0 scroll-section"
-      id="strategy"
+      className="lg:h-screen rounded-[16px] md:rounded-[32px] bg-[#101012] flex justify-center px-2 pt-2 md:py-10 md:px-0 pb-2 md:pb-0ƒ"
+      id={id}
     >
       <div className="flex flex-col items-center md:w-[68%]">
         <h1 className="text-[28px] leading-[36px] md:text-[40px] md:leading-[48px] font-semibold mb-2">

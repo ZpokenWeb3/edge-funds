@@ -14,10 +14,7 @@ export const Hero = () => {
   const scr = useScreenSize();
 
   return (
-    <div
-      className="relative h-[680px] md:h-screen rounded-[16px] md:rounded-[32px] scroll-section"
-      id="hero"
-    >
+    <div className="relative h-[680px] md:h-screen rounded-[16px] md:rounded-[32px]">
       <div className="flex flex-col items-center z-10 relative pt-10 md:pt-[56px]">
         <div className="flex items-start">
           <h1 className="text-[28px] leading-[36px] md:text-[40px] md:leading-[48px] font-semibold mb-2 text-center">
@@ -107,7 +104,9 @@ export const Hero = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        ) : <></>}
+        ) : (
+          <></>
+        )}
       </div>
       <div className="bg-[url(/hero_mobile_bg.webp)] md:bg-[url(/hero.webp)] bg-cover bg-no-repeat inset-0 absolute z-0 rounded-[16px] md:rounded-[32px]" />
       <div className="hidden md:block bg-gradient-to-r from-[rgba(0,0,0,0.84)] to-[rgba(0,0,0,0.00)] top-0 left-0 h-screen absolute z-0 inset-0 w-[47%]" />

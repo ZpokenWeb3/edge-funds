@@ -1,11 +1,11 @@
 import { CustomResponsiveImage } from "../custom-responsive-image";
 import { Icons } from "../icons";
 
-export const Footer = () => {
+export const Footer = ({ id }: { id?: string }) => {
   return (
     <div
-      id="about"
-      className="flex flex-col items-center mt-2 md:mt-10 gap-6 md:gap-8 scroll-section"
+      id={id}
+      className="flex flex-col items-center mt-2 md:mt-10 gap-6 md:gap-8 pb-20 lg:pb-0"
     >
       <div className="flex w-full flex-col items-center gap-6 md:gap-8 md:w-[68%]">
         <h1 className="text-[28px] leading-[36px] md:text-[40px] md:leading-[48px] font-semibold text-center">

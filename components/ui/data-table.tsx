@@ -39,8 +39,8 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <>
-      <ScrollArea className="w-full h-[348px] md:h-[392px] p-3 md:p-6 rounded-lg border border-border bg-[rgba(0,0,0,0.70)]">
+    <div className="w-full md:h-[392px] p-3 md:p-6 rounded-lg border border-border bg-[rgba(0,0,0,0.70)]">
+      <ScrollArea className="w-full h-[348px]">
         <Table className="relative">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -120,6 +120,6 @@ export function DataTable<TData, TValue>({
         </Table>
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
-    </>
+    </div>
   );
 }
