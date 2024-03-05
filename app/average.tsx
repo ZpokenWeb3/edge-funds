@@ -4,7 +4,7 @@ import { tokens } from "@/constants/data";
 export const Average = ({ id }: { id?: string }) => {
   return (
     <div
-      className="relative md:h-screen rounded-[16px] md:rounded-[32px] flex justify-center"
+      className="relative md:h-[calc(100vh-32px)] rounded-[16px] md:rounded-[32px] flex justify-center"
       id={id}
     >
       <div className="bg-[url(/average_mobile_bg.webp)] md:bg-[url(/average.webp)] bg-cover bg-no-repeat inset-0 absolute z-0 rounded-[16px] md:rounded-[32px]" />

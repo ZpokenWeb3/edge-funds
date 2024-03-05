@@ -84,7 +84,7 @@ export const Footer = ({ id }: { id?: string }) => {
           </div>
         </div>
       </div>
-      <div className="py-6 px-0 md:py-12 md:px-[56px] w-full grid lg:grid-cols-3 gap-8 lg:gap-20">
+      <div className="py-6 md:py-12 md:px-[56px] w-full grid lg:grid-cols-3 gap-8 lg:gap-20 px-2 lg:px-0">
         <div className="flex flex-col justify-between">
           <div className="flex lg:flex-col justify-between gap-6">
             <CustomResponsiveImage

@@ -4,17 +4,16 @@ import { Button } from "@/components/ui/button";
 export const Strategy = ({ id }: { id?: string }) => {
   return (
     <div
-      className="lg:h-screen rounded-[16px] md:rounded-[32px] bg-[#101012] flex justify-center px-2 pt-2 md:py-10 md:px-0 pb-2 md:pb-0ƒ"
+      className="lg:h-[calc(100vh-32px)] rounded-[16px] md:rounded-[32px] bg-[#101012] flex justify-center px-2 pt-2 md:py-10 md:px-0 pb-2 md:pb-0ƒ"
       id={id}
     >
       <div className="flex flex-col items-center md:w-[68%]">
         <h1 className="text-[28px] leading-[36px] md:text-[40px] md:leading-[48px] font-semibold mb-2">
           Strategy
         </h1>
-        <p className="text-sm font-normal md:text-base tracking-[-0.25px] text-center text-muted-foreground mb-6 md:mb-8">
-          Diversified/multifaceted Market-Neutral strategy spanning cross-
-          <br />
-          chain arbitrage, market making and hedged yield farming
+        <p className="text-sm font-normal md:text-base tracking-[-0.25px] text-center text-muted-foreground mb-6 md:mb-8 lg:w-[60%]">
+          Diversified/multifaceted Market-Neutral strategy spanning cross-chain
+          arbitrage, market making and hedged yield farming
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
           <div className="flex flex-col gap-3">

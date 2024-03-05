@@ -19,13 +19,13 @@ const Page = () => {
           pageOnChange={(number) => setCurrentPage(number)}
           customPageNumber={currentPage}
         >
-          <div className="px-2 md:px-4">
+          <div className="px-2 md:px-4 py-4">
             <Hero />
           </div>
-          <div className="px-2 md:px-4">
+          <div className="px-2 md:px-4 py-4">
             <Strategy />
           </div>
-          <div className="px-2 md:px-4">
+          <div className="px-2 md:px-4 py-4">
             <Average />
           </div>
           <div className="px-2 md:px-4">
@@ -37,7 +37,7 @@ const Page = () => {
           setCurrentPage={setCurrentPage}
         />
       </div>
-      <div className="flex flex-col md:hidden px-2 md:px-4">
+      <div className="flex flex-col md:hidden px-2 md:px-4 gap-4">
         <Hero />
         <Strategy id="strategy" />
         <Average id="perfomance" />

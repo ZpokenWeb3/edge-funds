@@ -14,7 +14,7 @@ export const Hero = () => {
   const scr = useScreenSize();
 
   return (
-    <div className="relative h-[680px] md:h-screen rounded-[16px] md:rounded-[32px]">
+    <div className="relative h-[680px] md:h-[calc(100vh-32px)] rounded-[16px] md:rounded-[32px]">
       <div className="flex flex-col items-center z-10 relative pt-10 md:pt-[56px]">
         <div className="flex items-start">
           <h1 className="text-[28px] leading-[36px] md:text-[40px] md:leading-[48px] font-semibold mb-2 text-center">
